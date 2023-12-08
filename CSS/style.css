@@ -1,0 +1,289 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background:#eee;
+    
+   }
+
+/*--------------------------------------header-------------------------------------*/
+    header{
+        width: 100%;
+        height: 30vh;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding:30px 5%;
+        border: 3px outset;
+        border-color: #dabce9;
+        
+    }
+   
+    header>img{
+       height: 10em;
+       width: 10em;
+       padding: .5em .5em;
+    }
+
+    nav li{
+        display: inline-block;
+        list-style: none;
+        padding:0 20px;
+    }
+       
+    a,button,input{
+        text-decoration: none;
+        font-size: 1.5em;
+        color: #8312bb;
+    }
+    form.search input[type=text] {
+        padding: 5px;
+        
+        border: 2px solid grey;
+        
+        float: left;
+        
+        background: #f1f1f1;
+    }
+    form.search button {
+        float: left;
+        
+        padding: 5px;
+        background: #f1f1f1;
+        color: blue;
+        
+        border: 2px solid grey;
+        border-left: none;
+        cursor: pointer;
+      }
+      form.search button:hover {
+        color: #01070c;
+      }
+
+    nav li a:hover{
+        color:#c51212;
+        transition: all 0.4s ease 0s;
+    }
+    li.active a{
+        color:rgb(71, 27, 182);
+        text-shadow: 2px 2px 5px rgb(7, 142, 18);
+       }
+        /*--------------------------------------header-------------------------------------*/
+
+        /*--------------------------------------main----------------------------------------*/
+
+        #tagline{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding-top: 2em;
+            padding-bottom: 2em;
+            color: #8312bb;
+
+        }
+        #tagline>i{
+            font-family: Smooch;
+            font-size: 2em;
+        }
+        #tagline>b{
+            font-family: Acme;
+            font-size: 2em;
+        }
+        div.left, div.middle, div.right{
+            border: 3px;
+            width: 31%;
+        }
+        section img{
+            width: 100%;
+            height: 100%;
+          }
+          
+         section{
+            display: flex;
+            justify-content: space-between;
+            padding: 1em;
+          }
+
+          article>p{
+            font-size: 2em;
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 2em;
+          }
+          article>div{
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+
+          }
+          article>div>p{
+            padding: 2em;
+            justify-content: center;
+            display: inline-block;
+           }
+          article>div>img{
+            border-radius: 50%;
+            float:left;
+            margin-right: 10px;
+           
+          }
+
+          /*----------------------------footer-------------------------------*/
+footer{
+  
+    display: flex;
+     justify-content: space-between;
+     border: 2px inset rgb(191, 191, 211);
+     padding: 8px;
+     
+    
+     width: 100%;
+     bottom: 0;
+   }
+   
+   .creat, .contact, .social{
+    width: 30%;
+   }
+   .creat{
+    margin-left: 2em;
+   }
+   .contact{
+    font-size: 1.2em;
+   }
+   .social a{
+    font-size: 2.5em;
+   
+   }
+   .social a:hover {
+    color: #c3d5da;
+    font-size: 2.9em;
+    
+     
+   }
+   
+   .social p{
+    font-size: 1.2em;
+   }
+   
+   /*----------------------------footer-------------------------------*/
+   
+    /*---------media queries---------------*/
+
+    @media screen and (min-width: 200px) and (max-width: 500px) {
+        header>img{
+            height: 8em;
+            width: 8em;
+            
+         }  
+         header{
+            width: 100%;
+            height: 35vh;
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            padding: 0;
+            
+         }
+         button,input{
+            text-decoration: none;
+            font-size: 1em;
+            color: #8312bb;
+
+          .accordion{ 
+            display: inline-block;
+            text-align:justify;
+            margin: 1%;
+            width: 100%; 
+            
+            &:hover{
+            
+              /* max-height technique*/
+              .accordion-content{
+                /* If use the "height: auto", the effect not works. Is necessary some value for the CSS create a CSS animate, and we can use "max-height" with a great value for emulate this effect.*/
+                max-height: 300vh;
+              }
+            
+            }
+          }
+          
+          .accordion-content{
+            -webkit-transition: max-height 1s; 
+            -moz-transition: max-height 1s; 
+            -ms-transition: max-height 1s; 
+            -o-transition: max-height 1s; 
+            transition: max-height 1s;  
+            background: #e5feff;
+            overflow: hidden;
+            /* "height: 0" not work with css transitions*/
+            max-height: 0;
+          }
+          
+          .accordion-inner{
+            padding: 0 10px;
+          }
+          
+          .toggle{
+            -webkit-transition: background .1s linear;   
+            -moz-transition: background .1s linear;   
+            -ms-transition: background .1s linear;   
+            -o-transition: background .1s linear;   
+            transition: background .1s linear;   
+            background: #00b8c9;
+            border-radius: 3px;
+            color: #fff;
+            display: block;
+            font-size: 12px;
+            margin: 0 0 10px;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            
+            &:hover{
+              background: darken(#cc23a7, 15%);
+            }
+            
+          }
+          
+        }
+        }
+    @media screen and (min-width: 501px) and (max-width: 1100px) {
+        header>img{
+            height: 6em;
+            width: 6em;
+            padding: .5em .5em;
+         }
+         nav li{
+            display: inline-block;
+            list-style: none;
+            padding:0 10px;
+        }
+        a,button,input{
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #8312bb;
+        }
+        form.search input[type=text] {
+            padding: 5px;
+            
+            border: 2px solid grey;
+            width:auto;
+            float: left;
+            
+            background: #f1f1f1;
+        }
+        form.search button {
+            float: left;
+            
+            padding: 5px;
+            background: #f1f1f1;
+            color: blue;
+            
+            border: 2px solid grey;
+            border-left: none;
+            cursor: pointer;
+          }
+          
+    }
+
+   
+    
+
+         
